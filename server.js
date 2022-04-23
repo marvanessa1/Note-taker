@@ -23,18 +23,18 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
 
-// app.get('/api/notes', (req, res) => {
-//     res.sendFile(path.join(__dirname, '/public/notes.html'));
-// });
+app.get('/api/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/notes.html'));
+});
 
 app.post('api/notes', (req, res) =>{
-    //create (persist) data
+    // create (persist) data
 
-    //access new note data from 'req'
+    // access new note data from 'req'
 
-    //Push it to my existing list of notes
+    // Push it to my existing list of notes
 
-    //write my updates note list to the 'db.json' file
+    // write my updates note list to the 'db.json' file
 });
 
 // Wildcard route to direct users to a 404 page

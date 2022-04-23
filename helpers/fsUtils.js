@@ -22,6 +22,8 @@ const readAndAppend = (content, file) => {
         writeFile(file, JSON.stringify(parsedData, null, 4));
       }
     });
-  };
+};
+
+
 
 module.exports = { readFile, writeFile, readAndAppend};
