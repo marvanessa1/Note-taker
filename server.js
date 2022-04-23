@@ -7,16 +7,23 @@ const PORT = 3001;
 
 app.use(express.static('public'));
 
-//
-app.get('/notes', (req, res) => {
-    //send the file 'notes.html'
-    res.sendFile(path.join(__dirname, 'notes.html'));
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use('/api', routes);
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
-app.get('/api/notes', (req, res) => {
-    //send the file 'notes.html'
-    res.json(/* send note data*/);
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
+
+// app.get('/api/notes', (req, res) => {
+//     res.sendFile(path.join(__dirname, '/public/notes.html'));
+// });
 
 app.post('api/notes', (req, res) =>{
     //create (persist) data
